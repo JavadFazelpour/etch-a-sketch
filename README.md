@@ -14,8 +14,6 @@ By working on this project, I want to:
 4. **To explore Advanced CSS Styling:** Make the sketchpad visually appealing and easy to use.
 5. **To foster Independent Learning:** Dive into resources and documentation to learn new techniques beyond the course material.
 
----
-
 ## My Strategy
 
 - I plan to break the project into smaller tasks and focus on completing them one at a time.
