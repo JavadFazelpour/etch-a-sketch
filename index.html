@@ -9,27 +9,32 @@
 
 <body>
   <script>
-    function createGrid() {
+    function createGrid(numberOfRows) {
       const docBody = document.querySelector("body");
-      const rowLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P']
-      for (let i = 1; i <= 16; i++) {
+      const gridContainer = document.createElement("div");
+      gridContainer.setAttribute("class", "gridContainer");
+
+      for (let i = 1; i <= numberOfRows; i++) {
         const rowDiv = document.createElement("div");
-        rowDiv.setAttribute("id", `row${i}`);
-        docBody.appendChild(rowDiv);
+        rowDiv.setAttribute("id", `row${i}`)
+        rowDiv.setAttribute("class", "row")
+        gridContainer.appendChild(rowDiv);
       }
+      docBody.appendChild(gridContainer);
+
       let rowNumber = 1;
-      for (let i = 0; i < 256; i++) {
-        if (i % 16 === 0 && i !== 0) {
+      for (let i = 0; i < numberOfRows * numberOfRows; i++) {
+        if (i % numberOfRows === 0 && i !== 0) {
           rowNumber += 1;
         }
 
         const tileDiv = document.createElement("div");
-        tileDiv.setAttribute("id", `${rowLetters[rowNumber - 1]}${i % 16}`);
+        tileDiv.setAttribute("class", "tile");
         const row = document.querySelector(`#row${rowNumber}`)
         row.appendChild(tileDiv);
       }
     }
-    createGrid();
+    createGrid(64);
   </script>
 </body>
 
